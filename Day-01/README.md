@@ -1,46 +1,47 @@
-## SQL Solutions for Day 7 Challenges
+## Day 1 - Working with Variables in Python to Manage Data
 
-<img src="/Day-7/Challenge1-Day7.png">
+### Day Challenge
 
-```sql
+I built a simple band name generator. The program takes in the city you grew up in and your pet's name as inputs and suggests a band name based on that.
 
-SELECT
-    title,
-    replacement_cost,
-    rating,
-    (
-        SELECT ROUND(AVG(replacement_cost), 2) AS avg_cost
-        FROM film AS f3
-        WHERE f1.rating = f3.rating
-    ) AS avg_cost
-FROM
-    film AS f1
-WHERE
-    replacement_cost IN (
-        SELECT MAX(replacement_cost)
-        FROM film AS f2
-        WHERE f1.rating = f2.rating
-    )
-ORDER BY
-    rating;
+Replit Link : https://replit.com/@soundwave274/Day-1-Band-Name-Generator
+
+### Day Exercises
+
+<img src="/Day-01/1-1.jpeg">
+
+```python
+
+print('''1. Mix 500g of Flour, 10g Yeast and 300ml Water in a bowl.
+2. Knead the dough for 10 minutes.
+3. Add 3g of Salt.
+4. Leave to rise for 2 hours.
+5. Bake at 200 degrees C for 30 minutes.''')
 ```
 
-<img src="/Day-7/Challenge2-Day7.png">
+<img src="/Day-01/1-2.jpeg">
 
-```sql
+```python
 
-SELECT
-    first_name,
-    payment_id,
-    amount
-FROM
-    payment AS p1
-INNER JOIN
-    customer AS c ON p1.customer_id = c.customer_id
-WHERE
-    amount IN (
-        SELECT MAX(amount)
-        FROM payment AS p2
-        WHERE p1.customer_id = p2.customer_id
-    );
+name = input()
+print(len(name))
+```
+
+<img src="/Day-01/1-3.jpeg">
+
+```python
+
+# There are two variables, a and b from input
+a = input()
+b = input()
+# 🚨 Don't change the code above ☝️
+####################################
+# Write your code below this line 👇
+c = a
+a = b
+b = c
+
+# 🚨 Don't change the code below 👇
+print("a: " + a)
+print("b: " + b)
 ```
